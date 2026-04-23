@@ -62,17 +62,17 @@ const toggleBtn = document.getElementById("theme-toggle");
 // Restore le thème depuis localStorage
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-theme");
-    toggleBtn.textContent = "☀️";
+    toggleBtn.textContent = "🌴";
 }
 
 toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
     if (document.body.classList.contains("dark-theme")) {
-        toggleBtn.textContent = "☀️";
+        toggleBtn.textContent = "🌴";
         localStorage.setItem("theme", "dark");
     } else {
-        toggleBtn.textContent = "🌙";
+        toggleBtn.textContent = "🌑";
         localStorage.setItem("theme", "light");
     }
 });
