@@ -1,58 +1,167 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mon Portfolio</title>
+
+    
+
+    <!-- Google Fonts Poppins -->
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    
+
     <link rel="stylesheet" href="styles/style.css">
+
 </head>
+
+
+
+
+
 <body>
 
+
+
+<!-- ===== ÉCRAN DE DÉMARRAGE (ANIMATION LOGO) ===== -->
+
 <div id="intro">
+
     <img src="img/logo.webp" alt="Mon Logo" id="logo">
+
 </div>
 
+
+
 <header>
+
+    <!-- Menu burger -->
+
     <div class="burger">
+
         <span></span>
+
         <span></span>
+
         <span></span>
+
     </div>
 
-    <a href="index.html" class="nav-logo">
-        <img src="img/logo.webp" alt="logo">
-    </a>
 
-    <nav>
+
+    <!-- Navigation -->
+
+    <nav><button id="theme-toggle">🌑</button>
+
+        <a href="index.html" class="nav-logo">
+
+            <img src="img/logo.webp" alt="logo"></a>
+
+
+
         <a href="index.html">Accueil</a>
+
         <a href="presentation.html">Présentation</a>
+
         <a href="competences.html">Compétences</a>
+
         <a href="projets.html">Projets</a>
+
         <a href="contact.html">Contact</a>
+
     </nav>
 
+
+
+    <!-- Mode sombre -->
+
     <button id="theme-toggle">🌑</button>
+
 </header>
 
 <section class="hero">
+
     <h1 class="fade">Anthony GARGOUA 💁🏻‍♂️</h1>
-    <p class="fade">Bienvenue sur mon portfolio. Je vous invite à découvrir mon parcours, mes projets, mes compétences, ainsi qu’à me contacter si vous souhaitez échanger davantage.</p>
+
+    <p class="fade">Bienvenue sur mon portfolio. Je vous invite à découvrir mon parcours, mes projets, mes compétences, ainsi qu’à me contacter si vous souhaitez
+
+        échanger davantage.</p>
+
 </section>
+
+
+
+<!-- ===== SECTION LONG TEXTE + PHOTO ===== -->
 
 <section class="bio">
+
     <div class="bio-text">
+
         <h2>À propos de moi</h2>
+
         <p>
-            Je suis titulaire de deux diplômes Bac+3 : <b>un Bac+3 en Marketing Digital & Social Media et un Bac+3 en Pilotage du Développement Commercial.</b>...
+
+            
+
+Je suis titulaire de deux diplômes Bac+3 : <b>un Bac+3 en Marketing Digital & Social Media et un Bac+3 en Pilotage du Développement Commercial.</b>
+
+Au cours de mes années d’alternance, j’ai acquis des compétences en développement web et en programmation, ce qui m’a permis d’aborder le digital sous un angle
+
+à la fois technique et stratégique.
+
+
+
+Après mes études, j’ai choisi de me tourner vers le secteur automobile en travaillant pendant un an et demi comme <b>commercial B2C chez Peugeot.</b>
+
+Souhaitant découvrir de nouveaux environnements professionnels, 
+
+j’ai ensuite occupé le poste <b>d’assistant administratif et commercial polyvalent au sein de l’Auto-École de la Comédie.</b>
+
+
+
+Mais ma passion pour la tech, la programmation et la création de solutions numériques m’a rapidement rattrapé. Je souhaite donc reprendre mes études afin de valider un
+
+<b>Master en Développement de Solutions Logiciels.</b>
+
+
+
+Passionné par les nouvelles technologies, l’innovation et la conception d’outils adaptés aux besoins des utilisateurs, je suis aujourd’hui motivé par l’idée de combiner
+
+mes compétences techniques, mon sens du commerce et ma vision digitale.
+
+Polyvalent, curieux et rigoureux, j’aime apprendre, résoudre des problématiques concrètes et participer à des projets ambitieux qui ont un véritable impact.
+
+
+
         </p>
+
     </div>
+
+
+
     <div class="bio-photo">
+
         <img src="img/anthony.webp" alt="Ma Photo">
+
     </div>
+
 </section>
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <script src="js/script.js"></script>
+
+
+
 </body>
+
 </html>
