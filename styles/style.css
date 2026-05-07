@@ -13,7 +13,12 @@
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
 
 body { 
     background: var(--bg); 
@@ -22,7 +27,7 @@ body {
     overflow-x: hidden; 
 }
 
-/* ===== LOADER (INTRO) CORRECTIF ===== */
+/* ===== LOADER (INTRO) ===== */
 #intro {
     position: fixed;
     top: 0;
@@ -33,7 +38,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000; /* Au-dessus de tout */
+    z-index: 2000;
 }
 
 #logo {
@@ -41,7 +46,7 @@ body {
     opacity: 0; /* Géré par GSAP */
 }
 
-/* NAVIGATION */
+/* ===== NAVIGATION ===== */
 header {
     background: var(--card);
     border-bottom: 2px solid var(--accent);
@@ -59,9 +64,18 @@ header {
     padding: 10px 20px;
 }
 
-.nav-logo img { height: 45px; width: auto; border-radius: 8px; }
+.nav-logo img { 
+    height: 45px; 
+    width: auto; 
+    border-radius: 8px; 
+}
 
-nav { display: flex; gap: 20px; align-items: center; }
+nav { 
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+}
+
 nav a {
     text-decoration: none;
     font-weight: 600;
@@ -69,35 +83,120 @@ nav a {
     transition: 0.3s;
     font-size: 0.9rem;
 }
-nav a:hover, nav a.active { color: var(--accent); }
 
-/* BURGER */
-.burger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
-.burger span { width: 25px; height: 3px; background: var(--text); border-radius: 2px; }
-#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+nav a:hover, nav a.active { 
+    color: var(--accent); 
+}
 
-/* CONTENU */
-.content { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-.fade { opacity: 0; transform: translateY(20px); }
+/* MENU BURGER */
+.burger { 
+    display: none; 
+    flex-direction: column; 
+    gap: 4px; 
+    cursor: pointer; 
+}
 
-/* BIO */
-.bio { display: flex; align-items: center; gap: 40px; margin-top: 30px; }
+.burger span { 
+    width: 25px; 
+    height: 3px; 
+    background: var(--text); 
+    border-radius: 2px; 
+}
+
+#theme-toggle { 
+    background: none; 
+    border: none; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+}
+
+/* ===== CONTENU GLOBAL ===== */
+.content { 
+    max-width: 1100px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
+
+.fade { 
+    opacity: 0; 
+    transform: translateY(20px); 
+}
+
+/* ===== SECTION BIO (ACCUEIL) ===== */
+.bio { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+    margin-top: 30px; 
+}
+
 .bio-text { flex: 2; }
 .bio-photo { flex: 1; }
-.bio-photo img { width: 100%; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow); }
+.bio-photo img { 
+    width: 100%; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 20px var(--shadow); 
+}
 
-/* GRILLES (COMPÉTENCES & SITES WEB) */
-.skills-grid, .websites-grid {
+/* ===== GRILLES DE COMPÉTENCES ===== */
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 
-/* ===== NOUVEAU : GRILLE PHOTOS (PROJETS) ===== */
+.skill-category {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* ===== GRILLE PROJETS (SITES WEB CLICABLES) ===== */
+.websites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.site-card {
+    background: var(--card);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.site-card:hover { transform: translateY(-5px); }
+
+.site-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.site-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.site-card h3 {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* ===== GRILLE MAQUETTES (GALLERY) ===== */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur PC */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-top: 30px;
 }
@@ -108,12 +207,9 @@ nav a:hover, nav a.active { color: var(--accent); }
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 5px 15px var(--shadow);
-    transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover { transform: scale(1.03); }
-
-/* ===== NOUVEAU : CARTES PRÉSENTATION ===== */
+/* ===== CARTES PRÉSENTATION (INTERESTS) ===== */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -133,7 +229,7 @@ nav a:hover, nav a.active { color: var(--accent); }
     border: 1px solid rgba(201, 162, 39, 0.2);
 }
 
-.card span { font-weight: 600; z-index: 2; }
+.card span { font-weight: 600; z-index: 2; position: relative; }
 
 .hover-img {
     position: absolute;
@@ -145,7 +241,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .card:hover .hover-img { opacity: 1; }
 
-/* ===== NOUVEAU : FORMULAIRE CONTACT RESPONSIVE ===== */
+/* ===== FORMULAIRE DE CONTACT ===== */
 .contact-form {
     max-width: 600px;
     margin: 30px auto;
@@ -161,6 +257,7 @@ nav a:hover, nav a.active { color: var(--accent); }
     border: 1px solid rgba(201, 162, 39, 0.3);
     background: var(--card);
     color: var(--text);
+    font-size: 1rem;
 }
 
 .btn-submit {
@@ -171,22 +268,41 @@ nav a:hover, nav a.active { color: var(--accent); }
     border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
+    transition: 0.3s;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+.btn-submit:hover { opacity: 0.9; }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .websites-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .cards-container { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
     .burger { display: flex; }
     nav {
-        position: fixed; top: 0; left: -100%; height: 100vh; width: 70%;
-        background: var(--card); flex-direction: column; padding: 100px 20px;
-        transition: 0.4s ease; z-index: 999;
+        position: fixed; 
+        top: 0; 
+        left: -100%; 
+        height: 100vh; 
+        width: 70%;
+        background: var(--card); 
+        flex-direction: column; 
+        padding: 100px 20px;
+        transition: 0.4s ease; 
+        z-index: 999;
     }
     nav.active { left: 0; }
-    .bio { flex-direction: column-reverse; text-align: center; }
-    .gallery-grid, .cards-container { grid-template-columns: 1fr; }
+    
+    .bio { 
+        flex-direction: column-reverse; 
+        text-align: center; 
+    }
+    
+    .websites-grid, .gallery-grid, .cards-container { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .site-card img { height: 200px; }
 }
