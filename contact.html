@@ -3,111 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact | Anthony Gargoua</title>
     
     <!-- Google Fonts Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles/style.css">
-    
-    <style>
-        /* Message de retour (succès / erreur) */
-        .form-message {
-            opacity: 0;
-            transform: translateY(10px);
-            text-align: center;
-            margin-top: 15px;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        .form-message.success {
-            color: #4CAF50; /* Vert */
-        }
-
-        .form-message.error {
-            color: #E53935; /* Rouge */
-        }
-    </style>
 </head>
 
 <body>
 
 <header>
-    <!-- Menu burger -->
-    <div class="burger">
+    <div class="burger" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <!-- Navigation -->
-    <nav><button id="theme-toggle">🌑</button>
+    <nav>
         <a href="index.html" class="nav-logo">
-            <img src="img/logo.webp" alt="logo"></a>
-
-        <a href="index.html">Accueil</a>
-        <a href="presentation.html">Présentation</a>
-        <a href="competences.html">Compétences</a>
-        <a href="projets.html">Projets</a>
-        <a href="contact.html">Contact</a>
+            <img src="img/logo.webp" alt="Logo Anthony">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Présentation</a>
+            <a href="competences.html">Compétences</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+        <button id="theme-toggle" title="Changer le thème">🌑</button>
     </nav>
-
-    <!-- Mode sombre -->
-    <button id="theme-toggle">🌑</button>
 </header>
 
-<section class="content fade">
-    <h1>Me contacter ✍🏼</h1>
+<main class="content fade">
+    <section class="contact-section">
+        <h1>Me contacter ✍🏼</h1>
+        <p>Une question ou un projet ? N'hésitez pas à m'envoyer un message via le formulaire ci-dessous.</p>
 
-    <form class="contact-form"
-          action="https://formspree.io/f/mdkrrqwg"
-          method="POST">
+        <form class="contact-form" action="https://formspree.io/f/mdkrrqwg" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Nom" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Votre message..." required></textarea>
+            </div>
 
-        <input type="text" name="name" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message..." required></textarea>
+            <button type="submit" class="btn-submit">Envoyer</button>
 
-        <button type="submit">Envoyer</button>
-
-        <!-- Message dynamique -->
-        <div id="form-message" class="form-message"></div>
-    </form>
-</section>
+            <!-- Message dynamique de retour -->
+            <div id="form-message" class="form-message"></div>
+        </form>
+    </section>
+</main>
 
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- Animation + gestion du formulaire -->
+<!-- Logique du formulaire (On peut la laisser ici ou la mettre dans js/script.js) -->
 <script>
-const form = document.querySelector(".contact-form");
-const msgBox = document.getElementById("form-message");
+    const form = document.querySelector(".contact-form");
+    const msgBox = document.getElementById("form-message");
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    msgBox.classList.remove("success", "error");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        msgBox.classList.remove("success", "error", "show");
 
-    const response = await fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+            msgBox.textContent = "Merci ! Votre message a bien été envoyé ✨";
+            msgBox.className = "form-message success show";
+            form.reset();
+        } else {
+            msgBox.textContent = "Erreur lors de l’envoi. Veuillez réessayer.";
+            msgBox.className = "form-message error show";
+        }
+
+        gsap.fromTo(".show", 
+            { opacity: 0, y: 10 }, 
+            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+        );
     });
-
-    if (response.ok) {
-        msgBox.textContent = "Merci ! Votre message a bien été envoyé ✨";
-        msgBox.classList.add("success");
-        form.reset();
-    } else {
-        msgBox.textContent = "Erreur lors de l’envoi. Veuillez réessayer.";
-        msgBox.classList.add("error");
-    }
-
-    // Animation GSAP du message
-    gsap.fromTo(msgBox,
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
-    );
-});
 </script>
 
 <script src="js/script.js"></script>
