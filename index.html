@@ -20,28 +20,26 @@
 </div>
 
 <header>
-    <!-- Menu burger pour mobile -->
-    <div class="burger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
+    <div class="nav-container">
+        <!-- Le burger doit être là pour le mobile -->
+        <div class="burger">
+            <span></span><span></span><span></span>
+        </div>
+        
         <a href="index.html" class="nav-logo">
-            <img src="img/logo.webp" alt="Logo Anthony">
+            <img src="img/logo.webp" alt="Logo">
         </a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Accueil</a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
             <a href="presentation.html">Présentation</a>
             <a href="competences.html">Compétences</a>
             <a href="projets.html">Projets</a>
             <a href="contact.html">Contact</a>
-        </div>
-        <!-- Un seul bouton toggle suffit -->
-        <button id="theme-toggle" title="Changer le thème">🌑</button>
-    </nav>
+        </nav>
+
+        <button id="theme-toggle">🌑</button>
+    </div>
 </header>
 
 <main>
