@@ -3,112 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation</title> <!-- ou "Compétences" selon la page -->
+    <title>Présentation | Anthony Gargoua</title>
     
     <!-- Google Fonts Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
 <header>
-    <!-- Menu burger -->
-    <div class="burger">
+    <div class="burger" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <!-- Navigation -->
-     <nav><button id="theme-toggle">🌑</button>
+    <nav>
         <a href="index.html" class="nav-logo">
-            <img src="img/logo.webp" alt="logo"></a>
-
-        <a href="index.html">Accueil</a>
-        <a href="presentation.html">Présentation</a>
-        <a href="competences.html">Compétences</a>
-        <a href="projets.html">Projets</a>
-        <a href="contact.html">Contact</a>
+            <img src="img/logo.webp" alt="logo">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html" class="active">Présentation</a>
+            <a href="competences.html">Compétences</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button id="theme-toggle" title="Changer le thème">🌑</button>
     </nav>
-
-    <!-- Mode sombre -->
-    <button id="theme-toggle">🌑</button>
 </header>
 
-<section class="content">
+<main class="content fade">
+    <section class="intro-presentation">
+        <h1 class="title">Présentation 👋🏼</h1>
+        <h2 class="subtitle">Qui suis-je ?</h2>
 
-    <h1 class="title">Présentation 👋🏼</h1>
-    <h2 class="subtitle">Qui suis-je ?</h2>
-
-    <p>En dehors de mes projets professionnels et de ma passion pour les nouvelles technologies, je m’investis pleinement dans plusieurs activités qui rythment
-        mon quotidien et contribuent à mon équilibre.
-La musculation occupe une place importante dans ma routine : elle m’aide à rester discipliné, à me dépasser et à maintenir une bonne hygiène de vie.
-À côté de ça, j’aime aussi varier mes loisirs avec des sports de raquette comme le padel et le tennis, qui m’apportent à la fois détente, compétitivité
-et plaisir de partager des moments avec mes proches.
-
-Je suis également passionné par l’automobile et la moto, deux univers qui me suivent depuis longtemps. J’apprécie autant comprendre la mécanique,
-découvrir de nouveaux modèles que vivre les sensations que procurent ces véhicules. C’est un domaine qui me motive, m’inspire et fait partie intégrante de ma personnalité.
-
-Voyager est une autre passion qui me permet d’élargir ma vision du monde. Que ce soit pour découvrir de nouvelles cultures, de nouvelles villes ou simplement profiter d’un
-changement d’air, j’aime partir dès que l’occasion se présente. Chaque voyage me nourrit et m’aide à évoluer.
-
-Enfin, je suis aussi joueur de jeux vidéo, un loisir que je pratique depuis longtemps. Cela me permet de me détendre, de partager des moments avec des amis et parfois même
-d’explorer des univers créatifs qui stimulent mon imagination.
-
-Ces différentes passions représentent ce qui m’anime au quotidien : l’envie d’apprendre, de découvrir, de progresser et de profiter pleinement de ce que j’aime.
-Elles reflètent la personne que je suis, tant dans ma vie personnelle que professionnelle.
-</p>
-
-    <br><h3>Mes centres d’intérêt</h3></br>
-    <p>Passez votre souris sur les cases pour découvrir mes centres d'intérêts 👇🏼</p>
-
-    <div class="cards-container">
-
-        <div class="card">
-            <span>Musculation</span>
-            <img src="img/musculation.webp" class="hover-img">
+        <div class="presentation-text">
+            <p>
+                En dehors de mes projets professionnels, je m’investis pleinement dans plusieurs activités qui rythment mon quotidien. 
+                La <strong>musculation</strong> occupe une place centrale : elle m’apporte discipline et dépassement de soi. 
+                Je pratique également le <strong>padel</strong> et le <strong>tennis</strong> pour l'esprit de compétition et le partage.
+            </p>
+            <p>
+                Passionné par l'<strong>automobile et la moto</strong> depuis longtemps, j'aime autant l'aspect mécanique que les sensations de conduite. 
+                Le <strong>voyage</strong> est aussi essentiel pour moi ; chaque destination, de la Grèce à Londres, enrichit ma vision du monde.
+            </p>
+            <p>
+                Enfin, les <strong>jeux vidéo</strong> stimulent mon imagination et me permettent de partager des moments conviviaux entre amis. 
+                Ces passions reflètent mon envie constante d'apprendre et de progresser.
+            </p>
         </div>
+    </section>
 
-        <div class="card">
-            <span>Padel</span>
-            <img src="img/padel.webp" class="hover-img">
+    <section class="interests">
+        <h3>Mes centres d’intérêt</h3>
+        <p class="instruction">Passez votre souris sur les cases pour explorer mon univers 👇🏼</p>
+
+        <div class="cards-container">
+            <div class="card">
+                <span>Musculation</span>
+                <img src="img/musculation.webp" alt="Musculation" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Padel</span>
+                <img src="img/padel.webp" alt="Padel" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Tennis</span>
+                <img src="img/tennis.webp" alt="Tennis" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Voyage - Grèce</span>
+                <img src="img/acropole.webp" alt="Grèce" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Voyage - Londres</span>
+                <img src="img/londres.webp" alt="Londres" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Moto</span>
+                <img src="img/honda.webp" alt="Moto" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Voiture</span>
+                <img src="img/porsche.webp" alt="Voiture" class="hover-img">
+            </div>
+            <div class="card">
+                <span>Jeux vidéos</span>
+                <img src="img/ordinateur.webp" alt="Jeux vidéos" class="hover-img">
+            </div>
         </div>
-
-        <div class="card">
-            <span>Tennis</span>
-            <img src="img/tennis.webp" class="hover-img">
-        </div>
-
-        <div class="card">
-            <span>Voyage - Grèce</span>
-            <img src="img/acropole.webp" class="hover-img">
-        </div>
-
-        <div class="card">
-            <span>Voyage - Londres</span>
-            <img src="img/londres.webp" class="hover-img">
-        </div>
-
-        <div class="card">
-            <span>Moto</span>
-            <img src="img/honda.webp" class="hover-img">
-        </div>
-
-        <div class="card">
-            <span>Voiture</span>
-            <img src="img/porsche.webp" class="hover-img">
-        </div>
-
-        <div class="card">
-            <span>Jeux vidéos</span>
-            <img src="img/ordinateur.webp" class="hover-img">
-        </div>
-
-    </div>
-
-</section>
+    </section>
+</main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="js/script.js"></script>
