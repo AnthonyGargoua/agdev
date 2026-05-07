@@ -1,23 +1,23 @@
 :root {
     --bg: #f4efe6;
     --text: #333;
-    --accent: #c9a227; /* Ton or élégant */
+    --accent: #c9a227;
     --card: #fffaf1;
-    --shadow: rgba(0, 0, 0, 0.08);
+    --shadow: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
     --bg: #111;
     --text: #f1f1f1;
     --card: #1a1a1a;
-    --shadow: rgba(0, 0, 0, 0.4);
+    --shadow: rgba(0, 0, 0, 0.5);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
 body { background: var(--bg); color: var(--text); transition: 0.3s; overflow-x: hidden; }
 
-/* NAVIGATION */
+/* NAVIGATION RESPONSIVE */
 header {
     background: var(--card);
     border-bottom: 2px solid var(--accent);
@@ -32,60 +32,62 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
 }
 
-.nav-logo img { height: 40px; border-radius: 8px; }
+.nav-logo img { height: 45px; width: auto; border-radius: 8px; }
 
-nav { display: flex; gap: 30px; align-items: center; }
-nav a { text-decoration: none; font-weight: bold; color: var(--text); transition: 0.3s; }
-nav a.active { color: var(--accent); }
+nav { display: flex; gap: 20px; align-items: center; }
+nav a { text-decoration: none; font-weight: 600; color: var(--text); transition: 0.3s; font-size: 0.9rem; }
+nav a:hover, nav a.active { color: var(--accent); }
 
-#theme-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
+/* BURGER & THEME */
+.burger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+.burger span { width: 25px; height: 3px; background: var(--text); border-radius: 2px; }
+#theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-/* BURGER */
-.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.burger span { width: 25px; height: 3px; background: var(--text); transition: 0.3s; }
+/* CONTENU PRINCIPAL */
+.content { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.fade { opacity: 0; transform: translateY(20px); }
 
-/* SECTIONS */
-.content { max-width: 900px; margin: 40px auto; padding: 20px; }
-.fade { opacity: 0; } /* Pour GSAP */
+/* BIO & PHOTOS */
+.bio { display: flex; align-items: center; gap: 40px; margin-top: 30px; }
+.bio-text { flex: 2; }
+.bio-photo { flex: 1; }
+.bio-photo img { width: 100%; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow); }
 
-/* GRILLE COMPETENCES */
-.skills-grid {
+/* GRILLES (COMPÉTENCES & PROJETS) */
+.skills-grid, .websites-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 
-.skill-category {
+.skill-category, .site-card {
     background: var(--card);
-    border: 1px solid var(--accent);
+    padding: 25px;
     border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px var(--shadow);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 5px 15px var(--shadow);
 }
 
 .skill-item {
     background: rgba(128, 128, 128, 0.1);
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
 }
-
-/* FORMULAIRE CONTACT */
-.contact-form { display: flex; flex-direction: column; gap: 15px; }
-input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #d3c7b3; background: #fff; }
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
     .burger { display: flex; }
     nav {
         position: fixed; top: 0; left: -100%; height: 100vh; width: 70%;
-        background: var(--card); flex-direction: column; padding-top: 80px;
-        transition: 0.4s; box-shadow: 5px 0 15px var(--shadow);
+        background: var(--card); flex-direction: column; padding: 100px 20px;
+        transition: 0.4s ease; z-index: 999;
     }
     nav.active { left: 0; }
+    .bio { flex-direction: column-reverse; text-align: center; }
 }
