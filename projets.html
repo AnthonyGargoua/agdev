@@ -3,106 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Projets | Anthony Gargoua</title>
     
     <!-- Google Fonts Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
 <header>
-    <!-- Menu burger -->
-    <div class="burger">
+    <div class="burger" aria-label="Menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
 
-    <!-- Navigation -->
-     <nav><button id="theme-toggle">🌑</button>
+    <nav>
         <a href="index.html" class="nav-logo">
-            <img src="img/logo.webp" alt="logo"></a>
-
-        <a href="index.html">Accueil</a>
-        <a href="presentation.html">Présentation</a>
-        <a href="competences.html">Compétences</a>
-        <a href="projets.html">Projets</a>
-        <a href="contact.html">Contact</a>
+            <img src="img/logo.webp" alt="Logo Anthony">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="presentation.html">Présentation</a>
+            <a href="competences.html">Compétences</a>
+            <a href="projets.html" class="active">Projets</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button id="theme-toggle" title="Changer le thème">🌑</button>
     </nav>
-
-    <!-- Mode sombre -->
-    <button id="theme-toggle">🌑</button>
 </header>
 
-<section class="content fade">
+<main class="content fade">
+    <section class="projects-section">
+        <h1>Mes Projets 💻</h1>
 
-    <h1>Mes Projets 💻</h1>
-<br>
+        <div class="project-group">
+            <h2>Sites Web 🌐</h2>
+            <div class="websites-grid">
+                <article class="site-card">
+                    <a href="https://mtapeinture.fr/" target="_blank" rel="noopener">
+                        <img src="img/mtapeinture.webp" alt="Aperçu du site MTA Peinture">
+                        <h3>MTA Peinture</h3>
+                    </a>
+                </article>
 
-<h2>Sites Web 🌐</h2>
+                <article class="site-card">
+                    <a href="https://coconotescafe.fr/" target="_blank" rel="noopener">
+                        <img src="img/coconotescafe.webp" alt="Aperçu du site Coconotes café">
+                        <h3>Coconotes café</h3>
+                    </a>
+                </article>
 
-<div class="websites">
+                <article class="site-card">
+                    <a href="https://yogapujaut.wixsite.com/yoga-accompagnement" target="_blank" rel="noopener">
+                        <img src="img/yoapujaut.webp" alt="Aperçu du site Yoga Pujaut">
+                        <h3>Yoga Pujaut</h3>
+                    </a>
+                </article>
 
-    <div class="site-card">
-        <a href="https://mtapeinture.fr/" target="_blank">
-            <img src="img/mtapeinture.webp" alt="mtapeinture">
-            <h3>MTA Peinture</h3>
-        </a>
-    </div>
+                <article class="site-card">
+                    <a href="https://www.espace-anandaluz.com/" target="_blank" rel="noopener">
+                        <img src="img/anandaluz.webp" alt="Aperçu du site Anandaluz">
+                        <h3>Anandaluz</h3>
+                    </a>
+                </article>
+            </div>
+        </div>
 
-    <div class="site-card">
-        <a href="https://coconotescafe.fr/" target="_blank">
-            <img src="img/coconotescafe.webp" alt="coconotescafe">
-            <h3>Coconotes café</h3>
-        </a>
-    </div>
-
-    <div class="site-card">
-        <a href="https://yogapujaut.wixsite.com/yoga-accompagnement" target="_blank">
-            <img src="img/yoapujaut.webp" alt="yogapujaut">
-            <h3>Yoga Pujaut</h3>
-        </a>
-    </div>
-
-    <div class="site-card">
-        <a href="https://www.espace-anandaluz.com/" target="_blank">
-            <img src="img/anandaluz.webp" alt="anandaluz">
-            <h3>Anandaluz</h3>
-        </a>
-    </div>
-
-</div>
-
-<br> <br>
-    <h2>Maquettes 📌</h2>
-    
-    <div class="gallery">
-        <img src="img/cafe.webp">
-        <img src="img/capsule.webp">
-        <img src="img/coconotes.webp">
-        <img src="img/etoiles.webp">
-        <img src="img/fabic.webp">
-        <img src="img/hugy-flyer.webp">
-        <img src="img/hugy.webp">
-        <img src="img/location.webp">
-        <img src="img/mte-flyer.webp">
-        <img src="img/mte-story.webp">
-        <img src="img/saveur-biere.webp">
-        <img src="img/saveur-bouteilles.webp">
-        <img src="img/saveur-flyer.webp">
-        <img src="img/saveur-trinquer.webp">
-        <img src="img/sunrise-creme-jour.webp">
-        <img src="img/sunrise-creme.webp">
-        <img src="img/sunrise-produits.webp">
-        <img src="img/sunrise-serum.webp">
-    </div>
-
-    <br><br>
-
-</section>
+        <div class="project-group">
+            <h2>Maquettes & Design 📌</h2>
+            <div class="gallery-grid">
+                <img src="img/cafe.webp" alt="Maquette Café">
+                <img src="img/capsule.webp" alt="Maquette Capsule">
+                <img src="img/coconotes.webp" alt="Design Coconotes">
+                <img src="img/etoiles.webp" alt="Design Étoiles">
+                <img src="img/fabic.webp" alt="Design Fabic">
+                <img src="img/hugy-flyer.webp" alt="Flyer Hugy">
+                <img src="img/hugy.webp" alt="Maquette Hugy">
+                <img src="img/location.webp" alt="Interface Location">
+                <img src="img/mte-flyer.webp" alt="Flyer MTE">
+                <img src="img/mte-story.webp" alt="Story MTE">
+                <img src="img/saveur-biere.webp" alt="Design Saveur Bière">
+                <img src="img/saveur-bouteilles.webp" alt="Design Bouteilles">
+                <img src="img/saveur-flyer.webp" alt="Flyer Saveur">
+                <img src="img/saveur-trinquer.webp" alt="Visuel Trinquer">
+                <img src="img/sunrise-creme-jour.webp" alt="Produit Sunrise">
+                <img src="img/sunrise-creme.webp" alt="Gamme Sunrise">
+                <img src="img/sunrise-produits.webp" alt="Packshot Sunrise">
+                <img src="img/sunrise-serum.webp" alt="Sérum Sunrise">
+            </div>
+        </div>
+    </section>
+</main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="js/script.js"></script>
