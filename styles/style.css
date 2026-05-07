@@ -15,9 +15,33 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-body { background: var(--bg); color: var(--text); transition: 0.3s; overflow-x: hidden; }
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    transition: 0.3s; 
+    overflow-x: hidden; 
+}
 
-/* NAVIGATION RESPONSIVE */
+/* ===== LOADER (INTRO) CORRECTIF ===== */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Au-dessus de tout */
+}
+
+#logo {
+    width: 120px;
+    opacity: 0; /* Géré par GSAP */
+}
+
+/* NAVIGATION */
 header {
     background: var(--card);
     border-bottom: 2px solid var(--accent);
@@ -38,25 +62,31 @@ header {
 .nav-logo img { height: 45px; width: auto; border-radius: 8px; }
 
 nav { display: flex; gap: 20px; align-items: center; }
-nav a { text-decoration: none; font-weight: 600; color: var(--text); transition: 0.3s; font-size: 0.9rem; }
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text);
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
 nav a:hover, nav a.active { color: var(--accent); }
 
-/* BURGER & THEME */
+/* BURGER */
 .burger { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
 .burger span { width: 25px; height: 3px; background: var(--text); border-radius: 2px; }
 #theme-toggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-/* CONTENU PRINCIPAL */
+/* CONTENU */
 .content { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 .fade { opacity: 0; transform: translateY(20px); }
 
-/* BIO & PHOTOS */
+/* BIO */
 .bio { display: flex; align-items: center; gap: 40px; margin-top: 30px; }
 .bio-text { flex: 2; }
 .bio-photo { flex: 1; }
 .bio-photo img { width: 100%; border-radius: 20px; box-shadow: 0 10px 20px var(--shadow); }
 
-/* GRILLES (COMPÉTENCES & PROJETS) */
+/* GRILLES (COMPÉTENCES & SITES WEB) */
 .skills-grid, .websites-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -64,23 +94,91 @@ nav a:hover, nav a.active { color: var(--accent); }
     margin-top: 30px;
 }
 
-.skill-category, .site-card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid rgba(201, 162, 39, 0.2);
+/* ===== NOUVEAU : GRILLE PHOTOS (PROJETS) ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur PC */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
     box-shadow: 0 5px 15px var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-.skill-item {
-    background: rgba(128, 128, 128, 0.1);
-    margin: 10px 0;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
+.gallery-grid img:hover { transform: scale(1.03); }
+
+/* ===== NOUVEAU : CARTES PRÉSENTATION ===== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* RESPONSIVE MOBILE */
+.card {
+    background: var(--card);
+    height: 180px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.card span { font-weight: 600; z-index: 2; }
+
+.hover-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover .hover-img { opacity: 1; }
+
+/* ===== NOUVEAU : FORMULAIRE CONTACT RESPONSIVE ===== */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    background: var(--card);
+    color: var(--text);
+}
+
+.btn-submit {
+    background: var(--accent);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .cards-container { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
     .burger { display: flex; }
     nav {
@@ -90,4 +188,5 @@ nav a:hover, nav a.active { color: var(--accent); }
     }
     nav.active { left: 0; }
     .bio { flex-direction: column-reverse; text-align: center; }
+    .gallery-grid, .cards-container { grid-template-columns: 1fr; }
 }
