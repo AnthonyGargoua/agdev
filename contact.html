@@ -14,7 +14,7 @@
 
 <header>
     <div class="nav-container">
-        <!-- Le burger doit être là pour le mobile -->
+        <!-- Le burger pour le mobile -->
         <div class="burger">
             <span></span><span></span><span></span>
         </div>
@@ -28,17 +28,17 @@
             <a href="presentation.html">Présentation</a>
             <a href="competences.html">Compétences</a>
             <a href="projets.html">Projets</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
 
         <button id="theme-toggle">🌑</button>
     </div>
 </header>
 
-<main class="content fade">
-    <section class="contact-section">
-        <h1>Me contacter ✍🏼</h1>
-        <p>Une question ou un projet ? N'hésitez pas à m'envoyer un message via le formulaire ci-dessous.</p>
+<main class="content">
+    <section class="contact-section fade">
+        <h1 class="title">Me contacter ✍🏼</h1>
+        <p class="subtitle">Une question ou un projet ? N'hésitez pas à m'envoyer un message via le formulaire ci-dessous.</p>
 
         <form class="contact-form" action="https://formspree.io/f/mdkrrqwg" method="POST">
             <div class="form-group">
@@ -48,7 +48,7 @@
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <textarea name="message" placeholder="Votre message..." required></textarea>
+                <textarea name="message" placeholder="Votre message..." rows="5" required></textarea>
             </div>
 
             <button type="submit" class="btn-submit">Envoyer</button>
@@ -62,7 +62,7 @@
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- Logique du formulaire (On peut la laisser ici ou la mettre dans js/script.js) -->
+<!-- Logique du formulaire -->
 <script>
     const form = document.querySelector(".contact-form");
     const msgBox = document.getElementById("form-message");
