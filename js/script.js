@@ -4,11 +4,11 @@ const introLogo = document.getElementById("logo");
 // --- ANIMATION D'ENTRÉE (LOADER) ---
 if (intro) {
     const tl = gsap.timeline();
-    tl.to(introLogo, { opacity: 1, scale: 1.1, duration: 0.4, ease: "power2.out" })
-      .to(introLogo, { opacity: 0, scale: 0.8, duration: 0.6, ease: "power2.in" }, "+=0.5")
+    tl.to(introLogo, { opacity: 1, scale: 1.1, duration: 0.2, ease: "power2.out" })
+      .to(introLogo, { opacity: 0, scale: 0.8, duration: 0.4, ease: "power2.in" }, "+=0.5")
       .to(intro, { 
           opacity: 0, 
-          duration: 0.4, 
+          duration: 0.2, 
           onComplete: () => {
             intro.style.display = "none";
             launchPageAnimations();
