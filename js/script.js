@@ -84,3 +84,23 @@ burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     nav.classList.toggle("active");
 });
+
+// Animation des cartes de compétences
+gsap.from(".skill-category", {
+    duration: 0.8,
+    y: 30,            // Les cartes montent de 30px
+    opacity: 0,       // Elles partent de l'invisible
+    stagger: 0.2,     // L'effet "domino" : 0.2s d'écart entre chaque carte
+    ease: "power2.out",
+    delay: 0.2        // Attend un peu que la page charge
+});
+
+// Animation des petits items à l'intérieur
+gsap.from(".skill-item", {
+    duration: 0.5,
+    opacity: 0,
+    x: -10,
+    stagger: 0.05,    // Apparition très rapide les uns après les autres
+    ease: "power1.out",
+    delay: 0.6        // Commence après l'apparition des catégories
+});
