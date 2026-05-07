@@ -22,6 +22,7 @@ if (intro) {
 // --- ANIMATIONS GLOBALES ---
 function launchPageAnimations() {
     // Apparition des textes
+    gsap.to(".fade", { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" });
     gsap.to(".progress-line span", {
     scaleX: 1,
     duration: 1.5,
