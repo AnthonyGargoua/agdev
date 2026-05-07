@@ -1113,15 +1113,16 @@ nav a {
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: flex;
     align-items: center;
 }
 
 .skill-item:hover {
+    transform: scale(1.05) translateX(10px);
     background: #007bff;
     color: white;
-    transform: translateX(10px);
+    cursor: pointer;
 }
 
 /* Adaptation pour le mode sombre si nécessaire */
