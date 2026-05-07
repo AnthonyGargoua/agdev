@@ -1,47 +1,23 @@
-/* ===========================
-    VARIABLES (Design System)
-=========================== */
 :root {
     --bg: #f4efe6;
     --text: #333;
-    --accent: #c9a227;    /* OR ÉLÉGANT */
-    --accent-alt: #007bff; /* BLEU SKILLS */
-    --white: #fff;
+    --accent: #c9a227; /* Ton or élégant */
     --card: #fffaf1;
     --shadow: rgba(0, 0, 0, 0.08);
-    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Variables Mode Sombre */
 .dark-theme {
     --bg: #111;
     --text: #f1f1f1;
     --card: #1a1a1a;
     --shadow: rgba(0, 0, 0, 0.4);
-    --white: #222;
 }
 
-/* ===========================
-            GLOBAL
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    transition: background 0.4s, color 0.4s;
-    overflow-x: hidden;
-}
+body { background: var(--bg); color: var(--text); transition: 0.3s; overflow-x: hidden; }
 
-/* ===========================
-          NAVIGATION
-=========================== */
+/* NAVIGATION */
 header {
     background: var(--card);
     border-bottom: 2px solid var(--accent);
@@ -50,227 +26,66 @@ header {
     z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 15px 20px;
+.nav-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--text);
-    position: relative;
-    padding: 5px 0;
-    transition: var(--transition);
-}
+.nav-logo img { height: 40px; border-radius: 8px; }
 
+nav { display: flex; gap: 30px; align-items: center; }
+nav a { text-decoration: none; font-weight: bold; color: var(--text); transition: 0.3s; }
 nav a.active { color: var(--accent); }
 
-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--accent);
-    transition: 0.3s;
-}
+#theme-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
 
-nav a:hover::after { width: 100%; }
+/* BURGER */
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.burger span { width: 25px; height: 3px; background: var(--text); transition: 0.3s; }
 
-.nav-logo img {
-    width: 45px;
-    border-radius: 8px;
-}
-
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-/* ===========================
-          SECTIONS
-=========================== */
-main, .content, .hero {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
+/* SECTIONS */
+.content { max-width: 900px; margin: 40px auto; padding: 20px; }
 .fade { opacity: 0; } /* Pour GSAP */
 
-h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-h2 { margin-bottom: 1.5rem; }
-
-/* ===========================
-    ACCUEIL / BIO SECTION
-=========================== */
-.hero { text-align: center; padding: 60px 20px; }
-
-.bio {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.bio-text { flex: 2; }
-.bio-photo { flex: 1; text-align: center; }
-.bio-photo img {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow);
-}
-
-/* ===========================
-    COMPÉTENCES (GRILLE)
-=========================== */
+/* GRILLE COMPETENCES */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    margin-top: 30px;
 }
 
 .skill-category {
     background: var(--card);
-    border: 1px solid rgba(128, 128, 128, 0.1);
+    border: 1px solid var(--accent);
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px;
     box-shadow: 0 4px 15px var(--shadow);
-}
-
-.skill-category h3 {
-    color: var(--accent);
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-    margin-bottom: 15px;
 }
 
 .skill-item {
     background: rgba(128, 128, 128, 0.1);
-    margin: 10px 0;
-    padding: 12px;
+    margin: 8px 0;
+    padding: 10px;
     border-radius: 8px;
-    transition: var(--transition);
-}
-
-.skill-item:hover {
-    transform: scale(1.05) translateX(10px);
-    background: var(--accent);
-    color: white;
-}
-
-/* ===========================
-    PROJETS & GALERIE
-=========================== */
-.websites-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.site-card {
-    background: var(--card);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow);
-    transition: var(--transition);
-}
-
-.site-card:hover { transform: translateY(-10px); }
-
-.site-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 10px;
     transition: 0.3s;
 }
 
-/* ===========================
-    CARTES PASSIONS (Hover)
-=========================== */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-}
+/* FORMULAIRE CONTACT */
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+input, textarea { padding: 12px; border-radius: 8px; border: 1px solid #d3c7b3; background: #fff; }
 
-.card {
-    height: 180px;
-    background: var(--card);
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px var(--shadow);
-}
-
-.card .hover-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: 0.4s;
-}
-
-.card:hover .hover-img { opacity: 1; }
-.card span { position: relative; z-index: 2; font-weight: bold; }
-.card:hover span { color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-
-/* ===========================
-    MOBILE & BURGER
-=========================== */
-.burger { display: none; }
-
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
-    .burger { 
-        display: flex; 
-        flex-direction: column;
-        gap: 5px;
-        position: absolute;
-        left: 20px;
-        top: 25px;
-    }
-    .burger span { width: 25px; height: 3px; background: var(--text); }
-
+    .burger { display: flex; }
     nav {
-        position: fixed;
-        left: -100%;
-        top: 0;
-        flex-direction: column;
-        background: var(--bg);
-        width: 80%;
-        height: 100vh;
-        padding-top: 80px;
-        transition: 0.4s;
+        position: fixed; top: 0; left: -100%; height: 100vh; width: 70%;
+        background: var(--card); flex-direction: column; padding-top: 80px;
+        transition: 0.4s; box-shadow: 5px 0 15px var(--shadow);
     }
-
-    nav.active { left: 0; border-right: 2px solid var(--accent); }
-
-    .bio { flex-direction: column-reverse; text-align: center; }
+    nav.active { left: 0; }
 }
