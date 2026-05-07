@@ -27,7 +27,8 @@ function launchPageAnimations() {
     scaleX: 1,
     duration: 1.5,
     ease: "power2.out",
-    stagger: 0.1
+    stagger: 0.05,
+    delay : 0.5,
 });
     
     // Animation des catégories de compétences
