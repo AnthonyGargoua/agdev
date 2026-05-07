@@ -13,25 +13,26 @@
 <body>
 
 <header>
-    <div class="burger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <nav>
+    <div class="nav-container">
+        <!-- Le burger doit être là pour le mobile -->
+        <div class="burger">
+            <span></span><span></span><span></span>
+        </div>
+        
         <a href="index.html" class="nav-logo">
-            <img src="img/logo.webp" alt="Logo Anthony">
+            <img src="img/logo.webp" alt="Logo">
         </a>
-        <div class="nav-links">
+
+        <nav>
             <a href="index.html">Accueil</a>
             <a href="presentation.html">Présentation</a>
             <a href="competences.html">Compétences</a>
             <a href="projets.html">Projets</a>
-            <a href="contact.html" class="active">Contact</a>
-        </div>
-        <button id="theme-toggle" title="Changer le thème">🌑</button>
-    </nav>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button id="theme-toggle">🌑</button>
+    </div>
 </header>
 
 <main class="content fade">
