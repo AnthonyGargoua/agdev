@@ -494,15 +494,11 @@ button:hover {
 
     }
 
-
-
     .subtitle {
 
         text-align: center;
 
     }
-
-
 
     /* HERO */
 
@@ -514,8 +510,6 @@ button:hover {
 
     }
 
-
-
     /* CARDS */
 
     .cards-container {
@@ -525,8 +519,6 @@ button:hover {
         align-items: center;
 
     }
-
-
 
     .card {
 
@@ -546,8 +538,6 @@ button:hover {
 
     }
 
-
-
     .gallery img {
 
         width: 90%;
@@ -555,8 +545,6 @@ button:hover {
     }
 
 }
-
-
 
 /* ===========================
 
@@ -574,15 +562,11 @@ button:hover {
 
     }
 
-
-
     .hero {
 
         margin-top: 40px;
 
     }
-
-
 
     .card {
 
@@ -614,8 +598,6 @@ button:hover {
 
 }
 
-
-
 #intro-logo {
 
     width: 180px;
@@ -623,8 +605,6 @@ button:hover {
     opacity: 0;
 
 }
-
-
 
 /* ----- NAVIGATION ----- */
 
@@ -640,8 +620,6 @@ nav {
 
 }
 
-
-
 nav a {
 
     color: #000;
@@ -652,14 +630,11 @@ nav a {
 
 }
 
-
-
 nav a.active {
 
     color: #0077ff;
 
 }
-
 
 
 /* ----- HERO ----- */
@@ -672,15 +647,11 @@ nav a.active {
 
 }
 
-
-
 .fade {
 
     opacity: 0;
 
 }
-
-
 
 /* ----- BIO SECTION ----- */
 
@@ -700,15 +671,11 @@ nav a.active {
 
 }
 
-
-
 .bio-text {
 
     flex: 2;
 
 }
-
-
 
 .bio-text h2 {
 
@@ -716,15 +683,11 @@ nav a.active {
 
 }
 
-
-
 .bio-text p {
 
     line-height: 1.7;
 
 }
-
-
 
 .bio-photo {
 
@@ -735,8 +698,6 @@ nav a.active {
     justify-content: center;
 
 }
-
-
 
 .bio-photo img {
 
@@ -750,8 +711,6 @@ nav a.active {
 
 }
 
-
-
 /* ----- RESPONSIVE ----- */
 
 @media(max-width: 900px) {
@@ -764,15 +723,11 @@ nav a.active {
 
     }
 
-
-
     .bio-photo img {
 
         max-width: 250px;
 
     }
-
-
 
     nav {
 
@@ -784,8 +739,6 @@ nav a.active {
 
 }
 
-
-
 @media(max-width: 500px) {
 
     .hero {
@@ -793,8 +746,6 @@ nav a.active {
         padding: 80px 20px;
 
     }
-
-
 
     h1 {
 
@@ -826,15 +777,11 @@ nav a.active {
 
 }
 
-
-
 #theme-toggle:hover {
 
     transform: scale(1.2);
 
 }
-
-
 
 /* ----- MODE SOMBRE ----- */
 
@@ -846,15 +793,11 @@ nav a.active {
 
 }
 
-
-
 .dark-theme nav a {
 
     color: #f1f1f1;
 
 }
-
-
 
 .dark-theme nav a.active {
 
@@ -862,23 +805,17 @@ nav a.active {
 
 }
 
-
-
 .dark-theme .hero {
 
     color: #eee;
 
 }
 
-
-
 .dark-theme .bio-text p {
 
     color: #ddd;
 
 }
-
-
 
 .dark-theme #intro {
 
@@ -906,8 +843,6 @@ nav a.active {
 
 }
 
-
-
 .burger span {
 
     width: 28px;
@@ -919,8 +854,6 @@ nav a.active {
     transition: 0.3s;
 
 }
-
-
 
 /* Transformation en croix quand actif */
 
@@ -942,12 +875,9 @@ nav a.active {
 
 }
 
-
-
 /* Nav mobile */
 
 @media (max-width: 768px) {
-
 
 
     nav {
@@ -978,15 +908,11 @@ nav a.active {
 
     }
 
-
-
     nav.active {
 
         left: 0;
 
     }
-
-
 
     .burger {
 
@@ -995,8 +921,6 @@ nav a.active {
         z-index: 1001;
 
     }
-
-
 
     #theme-toggle {
 
@@ -1021,8 +945,6 @@ nav a.active {
 }
 
 }
-
-
 
 /* Mode sombre menu burger */
 
@@ -1054,15 +976,11 @@ nav a.active {
 
 }
 
-
-
 .nav-logo img:hover {
 
     transform: scale(1.1);
 
 }
-
-
 
 /* Pour que la nav reste propre en version mobile */
 
@@ -1076,8 +994,6 @@ nav {
 
 }
 
-
-
 nav a {
 
     display: flex;
@@ -1085,8 +1001,6 @@ nav a {
     align-items: center;
 
 }
-
-
 
 /* ----- Section sites web ----- */
 
@@ -1101,8 +1015,6 @@ nav a {
     margin-top: 20px;
 
 }
-
-
 
 .site-card {
 
@@ -1120,8 +1032,6 @@ nav a {
 
 }
 
-
-
 .site-card a {
 
     text-decoration: none;
@@ -1129,8 +1039,6 @@ nav a {
     color: var(--text, #333);
 
 }
-
-
 
 .site-card img {
 
@@ -1146,8 +1054,6 @@ nav a {
 
 }
 
-
-
 /* Hover animation */
 
 .site-card:hover {
@@ -1158,15 +1064,11 @@ nav a {
 
 }
 
-
-
 .site-card:hover img {
 
     transform: scale(1.03);
 
 }
-
-
 
 .site-card h3 {
 
@@ -1176,4 +1078,53 @@ nav a {
 
     font-weight: 600;
 
+}
+
+/* Container principal des compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Style de chaque catégorie */
+.skill-category {
+    background: rgba(255, 255, 255, 0.05); /* Effet léger pour le mode sombre */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #007bff; /* Couleur d'accentuation */
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Style de chaque compétence individuelle */
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.skill-item:hover {
+    background: #007bff;
+    color: white;
+    transform: translateX(10px);
+}
+
+/* Adaptation pour le mode sombre si nécessaire */
+body.dark-mode .skill-category {
+    background: rgba(0, 0, 0, 0.2);
 }
