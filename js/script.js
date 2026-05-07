@@ -27,7 +27,7 @@ function launchPageAnimations() {
     scaleX: 1,
     duration: 1.5,
     ease: "power2.out",
-    stagger: 0.05,
+    stagger: 1,
     delay : 0.5,
 });
     
