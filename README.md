@@ -3,7 +3,7 @@
 <p align="center">
   <img src="img/logo.webp" alt="Logo Anthony Gargoua" width="150">
   <br>
-  <em>"Concevoir aujourd'hui les solutions de demain."</em>
+  <em>"De commercial à Développeur Full Stack"</em>
 </p>
 
 <p align="center">
